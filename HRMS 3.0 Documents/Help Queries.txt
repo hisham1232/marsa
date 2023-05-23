@@ -1,0 +1,7 @@
+1. Query for an approver - My For Approval (Counting and Listing) - (get the staffId of the currently login staff, get his approver id and sequence number.
+
+	Select * FROM hrmd_standard_leave WHERE status = 'For Approval' AND workflow_current_sequence_number IN (1,2) AND workflow_current_approver_id = 15
+
+
+2. ALTER TABLE your_table
+   MODIFY COLUMN ts_activity TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;

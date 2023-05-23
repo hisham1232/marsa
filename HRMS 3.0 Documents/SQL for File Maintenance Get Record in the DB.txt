@@ -1,0 +1,136 @@
+TRUNCATE dbhr3_test.section;
+INSERT INTO dbhr3_test.section (name, shortName, department_id)
+SELECT name, shortName, departmentId FROM dbhr.section;
+
+
+TRUNCATE dbhr3_test.department;
+INSERT INTO dbhr3_test.department (name, shortName, isAcademic, managerId)
+SELECT deptName, deptShortName, 1, 0 FROM dbhr.department;
+
+
+TRUNCATE dbhr3_test.jobtitle;
+INSERT INTO dbhr3_test.jobtitle (name)
+SELECT name FROM dbhr.jobtitle;
+
+
+TRUNCATE dbhr3_test.qualification;
+INSERT INTO dbhr3_test.qualification (name)
+SELECT qualificationName FROM dbhr.qualification;
+
+
+TRUNCATE dbhr3_test.degree;
+INSERT INTO dbhr3_test.degree (name)
+SELECT name FROM dbhr.degree;
+
+
+TRUNCATE dbhr3_test.specialization;
+INSERT INTO dbhr3_test.specialization (name, shortName)
+SELECT name, shortName FROM dbhr.specialization;
+
+
+TRUNCATE dbhr3_test.extracertificates;
+INSERT INTO dbhr3_test.extracertificates (name)
+SELECT name FROM dbhr.extracertificates;
+
+
+TRUNCATE dbhr3_test.sponsor;
+INSERT INTO dbhr3_test.sponsor (name)
+SELECT sponsorName FROM dbhr.sponsor;
+
+
+TRUNCATE dbhr3_test.salarygrade;
+INSERT INTO dbhr3_test.salarygrade (code, name, salary)
+SELECT code, name, salary FROM dbhr.salarygrade;
+
+
+TRUNCATE dbhr3_test.nationality;
+INSERT INTO dbhr3_test.nationality (name, country)
+SELECT nationalityName, nationalityCountryName FROM dbhr.nationality;
+
+
+TRUNCATE dbhr3_test.contacttype;
+INSERT INTO dbhr3_test.contacttype (name)
+SELECT name FROM dbhr.contacttype;
+
+
+TRUNCATE dbhr3_test.status;
+INSERT INTO dbhr3_test.status (name)
+SELECT statusName FROM dbhr.status;
+
+
+TRUNCATE dbhr3_test.leavetype;
+INSERT INTO dbhr3_test.leavetype (name, deductDays, deanApprovalLimit)
+SELECT leaveName, deductDays, deanApprovalLimit FROM dbhr.leavetype;
+
+
+TRUNCATE dbhr3_test.staff_position;
+INSERT INTO dbhr3_test.staff_position (code, title, manager)
+SELECT code, title, manager FROM dbnctis.staff_position;
+
+
+
+TRUNCATE dbhr3_test.tasklist;
+INSERT INTO dbhr3_test.tasklist (name)
+SELECT taskName FROM dbhr.tasklist;
+
+
+TRUNCATE dbhr3_test.taskapprover;
+INSERT INTO dbhr3_test.taskapprover (task_id, staff_id, department_id, status, createdBy)
+SELECT taskId, staffId, deptId, status, enteredBy FROM dbhr.taskapprover;
+
+
+TRUNCATE TABLE dbhr3_test.staffqualification;
+INSERT INTO dbhr3_test.staffqualification (staffId, degree_id, certificate_id, graduateYear, institution, gpa, certificateNo, attachment)
+SELECT staffId, degreeId, certificateId, graduateYear, institutionName, gpa, certificateNumber, attachment FROM dbhr.staffqualification;
+
+
+TRUNCATE dbhr3_test.certificate;
+INSERT INTO dbhr3_test.certificate (name)
+SELECT name FROM dbhr.degreecertificate;
+
+
+TRUNCATE TABLE dbhr3_test.staffworkexperience;
+INSERT INTO dbhr3_test.staffworkexperience (staffId, designation, organizationName, organizationType, startDate, endDate, attachment)
+SELECT staffId, designation, organizationName, organizationType, startDate, endDate, attachment FROM dbhr.staffworkhistory;
+
+
+TRUNCATE TABLE dbhr3_test.staffextracertificate;
+INSERT INTO dbhr3_test.staffextracertificate (staffId, extracertificates_id, certificateNo, issuedDate, issuedPlace, attachment)
+SELECT staffId, certificateId, certificateNumber, dateIssue, placeIssue, attachment FROM dbhr.staffextracertificate;
+
+
+TRUNCATE TABLE dbhr3_test.trainingtype; INSERT INTO dbhr3_test.trainingtype (name) SELECT name FROM dbhr.trainingtype;
+
+
+TRUNCATE TABLE dbhr3_test.stafftraining;
+INSERT INTO dbhr3_test.stafftraining (staffId, trainingtype_id, title, startDate, endDate, place, inCollege, isSponsoredByCollege, attachment)
+SELECT staffId, trainingTypeId, title, startDate, endDate, place, isInsideCollege, isSponsoredByCollege, attachment FROM dbhr.stafftraining;
+
+
+TRUNCATE TABLE dbhr3_test.stafffamily;
+INSERT INTO dbhr3_test.stafffamily (staff_id, civilId, name, relationship, gender, birthdate)
+SELECT staffId, civilId, name, relationship, gender, birthdate FROM dbhr.stafffamily;
+
+
+
+TRUNCATE TABLE dbhr3_test.staffpublication;
+INSERT INTO dbhr3_test.staffpublication (staffId, category, title, name, place, coAuthors, copies, publishDate, abstract, attachment)
+SELECT staffId, category, title, publicationName, publicationPlace, coAuthors, numberOfCopies, publicationDate, abstract, attachment FROM dbhr.staffpublication;
+
+
+
+TRUNCATE TABLE dbhr3_test.staffresearch;
+INSERT INTO dbhr3_test.staffresearch (staffId, category, title, subject, organization, location, startDate, endDate, abstract, attachment)
+SELECT staffId, category, title, mainSubject, organization, location, startDate, endDate, abstract, attachment FROM dbhr.staffresearch;
+
+
+TRUNCATE TABLE dbhr3_test.holiday;
+INSERT INTO dbhr3_test.holiday (name, arabicName, startDate, endDate, total, isRamadan, createdBy)
+SELECT name, arabicName, startDate, noOfDays, isRamadan, enteredBy FROM dbhr.holiday;
+
+
+
+
+
+
+

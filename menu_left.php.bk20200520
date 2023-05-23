@@ -1,0 +1,118 @@
+ <aside class="left-sidebar">
+    <div class="scroll-sidebar">
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <?php 
+                    if($staffId == '189010' || $staffId == '107036' || $staffId == '111053' || $staffId == '114080' || $staffId == '413047') {
+                        ?>
+                        <li>
+                            <a href="http://apps.nct.edu.om/hrmd2_old/ajaxpages/logins/byPassLog.php?slid=<?php echo $staffId; ?>" target="_blank"><i class="fas fa-building"></i> Old System</a>
+                        </li>
+                        <?php
+                    }
+                ?>
+                <li>
+                    <a href="index.php?linkid=1"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <?php
+                    $allowed = ($helper->isAllowed('SuperAdmin') || $helper->isAllowed('HRHead') || $helper->isAllowed('HoD_HoC') || $staffId == '107034') ? true : false; 
+                    if($allowed){
+                        ?>
+                        <li>
+                            <a class="has-arrow " href="#" aria-expanded="false"><i class="fas fa-trophy"></i><span class="hide-menu"> Awarding</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="award_add.php"><i class="ti-link"></i>New Recommendation</a></li>
+                                <li><a href="award_my_recommendation.php"><i class="ti-link"></i>My Recommendation List</a></li>
+                                <?php 
+                                    if($staffId == '119084' || $staffId == '121101' || $staffId == '189010') {
+                                    ?>    
+                                    <li><a href="award_current_recommendation_list.php"><i class="ti-link"></i>Current Recommendation List</a></li>
+                                    <li><a href="award_recommendation_list_readonly.php"><i class="ti-link"></i>Recommendation List - Read Only</a></li>
+                                    <li><a href="award_winner_list.php"><i class="ti-link"></i>Winner List</a></li>
+                                    <li><a href="award_recommendation_list_all.php"><i class="ti-link"></i>All Recommendation List</a></li>
+                                    <li><a href="award_statistics_dept.php"><i class="ti-link"></i>Statistics by Department</a></li>
+                                    <li><a href="award_statistics_staff.php"><i class="ti-link"></i>Statistics by Staff</a></li>
+                                    <?php 
+                                    } else if ($staffId == '107034') {
+                                        ?>
+                                        <li><a href="award_winner_list.php"><i class="ti-link"></i>Winner List</a></li>
+                                        <?php
+                                    }
+                                ?>    
+                                
+                                <li><a href="award_about.php"><i class="ti-link"></i>About Awarding</a></li>
+                            </ul>
+                        </li>
+                        <?php 
+                    }
+                ?>    
+            <?php
+                $subMenu = new DbaseManipulation;
+                $sql = "SELECT m.id, m.user_type_id, m.menu_left_main_id, m.active, a.menu_name, a.appearance FROM access_menu_matrix as m 
+                LEFT OUTER JOIN access_menu_left_main AS a ON a.id = m.menu_left_main_id
+                WHERE m.user_type_id = $user_type
+                AND m.active = 1 AND a.active = 1 AND m.id != 1
+                ORDER BY a.appearance ASC";
+                $rowsOut = $helper->readData($sql);
+                ?>
+                
+                <?php
+                $approverOnly = new DbaseManipulation;
+                foreach($rowsOut as $rowOut){
+                    $menu_left_id = $rowOut['menu_left_main_id'];
+                    ?>
+                        <li>
+                            <a class="has-arrow " href="#" aria-expanded="false"><?php echo $rowOut['menu_name']; ?></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <?php
+                                    if($menu_left_id == 13) {
+                                        $app = $approverOnly->singleReadFullQry("SELECT staff_id FROM taskapprover WHERE staff_id = '$staffId' AND status = 'Active'");
+                                        if($approverOnly->totalCount != 0) {
+                                            $query = "SELECT sub.*, p.page_name, p.menu_name_sub, p.menu_left_id FROM access_menu_matrix_sub as sub 
+                                            LEFT OUTER JOIN access_menu_left_sub as p ON p.id = sub.access_menu_left_sub_id
+                                            WHERE sub.user_type_id = $user_type AND p.menu_left_id = $menu_left_id AND sub.active = 1
+                                            ORDER BY sub.id ASC";
+                                            $rows = $subMenu->readData($query);
+                                            foreach($rows as $row) {
+                                                ?>
+                                                <li><a href="<?php echo $row['page_name']; ?>?linkid=<?php echo $row['id']; ?>" title="<?php echo $row['menu_name_sub']; ?>"><i class="ti-link"></i><?php echo $row['menu_name_sub']; ?></a></li>
+                                                <?php
+                                            }
+                                        }    
+                                    } else {
+                                        $query = "SELECT sub.*, p.page_name, p.menu_name_sub, p.menu_left_id FROM access_menu_matrix_sub as sub 
+                                        LEFT OUTER JOIN access_menu_left_sub as p ON p.id = sub.access_menu_left_sub_id
+                                        WHERE sub.user_type_id = $user_type AND p.menu_left_id = $menu_left_id AND sub.active = 1
+                                        ORDER BY sub.id ASC";
+                                        $rows = $subMenu->readData($query);
+                                        foreach($rows as $row) {
+                                            ?>
+                                            <li><a href="<?php echo $row['page_name']; ?>?linkid=<?php echo $row['id']; ?>" title="<?php echo $row['menu_name_sub']; ?>"><i class="ti-link"></i><?php echo $row['menu_name_sub']; ?></a></li>
+                                            <?php
+                                        }
+                                    }    
+                                ?>
+                            </ul>
+                        </li>
+                    <?php
+                }
+                if($staffId == '196058' || $staffId == '404009') {
+                    ?>
+                        <li>
+                            <a href="attendance_all.php?linkid=42"><i class="fa fa-calendar-alt"></i> Staff Attendance</a>
+                        </li>
+                        <li>
+                            <a href="attendance_search_bystaff.php?linkid=41"><i class="fa fa-user"></i> Attendance By Staff</a>
+                        </li>
+                    <?php
+                }
+            ?>   
+                        <li>
+                            <a href="?logout=true"><i class="fa fa-power-off"></i> Logout</a>
+                        </li> 
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>

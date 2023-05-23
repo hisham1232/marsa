@@ -1,0 +1,8 @@
+SELECT * FROM approvalsequence_shortleave WHERE approverInSequence1 IN (
+  4,6,27,30,53,54,55,61,67,68,69,70,72,73,75,77,78,79,80
+  ) ORDER BY approverInSequence1;
+
+
+  SELECT * FROM approvalsequence_standardleave WHERE approver_id IN (
+  4,6,27,30,53,54,55,61,67,68,69,70,72,73,75,77,78,79,80
+  ) ORDER BY approver_id
