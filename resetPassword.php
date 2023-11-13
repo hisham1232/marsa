@@ -4,9 +4,6 @@
 
 <body class="fix-header fix-sidebar card-no-border">
     <div class="preloader">
-        <!-- <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-        </svg> -->
     </div>
     <section id="wrapper">
         <div class="login-register" style="background-image:url(assets/images/background/login-register.jpg);">
@@ -24,11 +21,7 @@
                         if(isset($_POST['submitLogin'])){
                             $checkLogin = new DbaseManipulation;
                             $Email = $checkLogin->cleanString($_POST['Email']);
-                            // $password = md5($checkLogin->cleanString($_POST['s_password']));
-                            echo "SELECT  [staff_id] FROM  [contactdetails] where  data='$Email' ";
-
                              $loginData = $checkLogin->singleReadFullQry("SELECT  [staff_id] FROM  [contactdetails] where  data='$Email' ");
-                            // echo "SELECT  [staff_id] FROM  [contactdetails] where  data='$Email' ";
                              if($checkLogin->totalCount == 0) {
                     ?>
                     <h4 class="box-title m-b-20 p-b-10 text-danger">
@@ -41,25 +34,19 @@
                                  $staff_id = $loginData['staff_id'];
                                  $update = new DbaseManipulation;
                                  $staff_id = $loginData['staff_id'];
-                               if ( $update->executeSQL("UPDATE [users] SET [token] = '$token' WHERE username = $staff_id"))
-                               {
+                             
                                  $login_id_hashed = hash_hmac('sha256',$staff_id,$token);  
                                  
-
-                                 ///////////////////////////////////////////////////////////////////
-
                                  $contact_details = new DbaseManipulation;
                                  $gsm = $contact_details->getContactInfo(1,$staff_id,'data');
                                  $getIdInfo = new DbaseManipulation;
-                               //  $email_department = $getIdInfo->fieldNameValue("department",$logged_in_department_id,"name");
                                  $from_name = 'hrms@nct.edu.om';
                                  $from = 'HRMS - 3.0';
                                  $subject = 'NCT-HRMD STAFF Reset Password  ';
                                  $message = '<html><body>';
-                                //  $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
                                  $message .= "<h3>NCT-HRMS 3.0 STAFF Reset Password</h3>";
                                  $message .= "<h3>This email for reset HR system Password </h3>";
-                                 $message .= "<h3><a href='http://localhost/hrmd3/nwePassword.php?token=$token'> Clik the link for reset password </a></h3>";
+                                 $message .= "<h3><a href='http://hr.nct.edu.om/hrmd3/newPassword.php?token=$token'> Clik the link for reset password </a></h3>";
  
                                  $message .= "</body></html>";
                                  $to = array();
@@ -67,6 +54,11 @@
                                  $emailParticipants = new sendMail;
                                  $a=1;
                                  if($emailParticipants->smtpMailer($to,$from_name,$from,$subject,$message)){
+                                    if ( $update->executeSQL("UPDATE [users] SET [token] = '$token' WHERE username = $staff_id"))
+                                    {
+                                        header("Location: resetPassword.php?massage=true");
+                                    }
+                            
                                      //Save Email Information in the system_emails table...
                                     //  $from_name = $from_name;
                                     //  $from = $from;
@@ -91,7 +83,7 @@
                                     //  $saveEmail = new DbaseManipulation;
                                     //  $saveEmail->insert("system_emails",$emailFields);  
 
-                                     header("Location: resetPassword.php?massage=true");
+                                    
  
                                  } else {
                                      //Save Email Information in the system_emails table...
@@ -122,10 +114,7 @@
                                  }    
                                  ///////////////////////////////////////////////////////////////////
                                    
-                               }
-                               else{
-                                echo "Erorr";
-                               }
+                                
                             }
                         }
                     ?>
@@ -143,9 +132,8 @@
                         </h3>';
                         }
                         else{
-                            echo'  <h3 class="box-title m-b-20 p-b-10">
-                            <center>Link use be for </center>
-                        </h3>';
+                            echo"<h4 class='box-title m-b-20 p-b-10 text-danger'>
+                            <center><i class='fa fa-exclamation-triangle'></i>Email NOt Send sent successfully</center>";
                         }
                     
                     }?>
