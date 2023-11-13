@@ -960,8 +960,8 @@ class DbaseManipulation extends Db { //"extends" means inheriting class Db
 	public function logoutUser(){
 		session_destroy();
 		unset($_SESSION);
-		header('Location: login.php');
-		// header('Location: https://www.nct.edu.om/eservices/index.php');
+		// header('Location: login.php');
+		header('Location: https://www.nct.edu.om/eservices/index.php');
 	}
 
 	public function isUserLogged(){
@@ -2248,7 +2248,7 @@ class DbaseManipulation extends Db { //"extends" means inheriting class Db
 class sendMail {
 	function smtpMailer($to, $from, $from_name, $subject, $body) { 
 		define('GUSER', 'hrms@nct.edu.om'); // GMail username
-		define('GPWD', 'Hr@UTAS_Nizwa^_^RK'); // GMail password
+		define('GPWD', 'mvps icra cbsb wkmv'); // GMail password
 	    global $error;
 	    $mail = new PHPMailer();  // create a new object
 	    $mail->IsSMTP(); // enable SMTP

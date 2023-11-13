@@ -77,7 +77,7 @@
                                                         $subject = 'NCT-HRMD INTERNAL LEAVE HAS BEEN FILED FOR '.strtoupper($email_staffName);
                                                         $d = '-';
                                                         $message = '<html><body>';
-                                                        $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                        $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                         $message .= "<h3>NCT-HRMS 3.0 INTERNAL LEAVE DETAILS AS FOLLOWS</h3>";
                                                         $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                                         $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>REQUEST NUMBER:</strong> </td><td>".$internalleavebalance_id."</td></tr>";

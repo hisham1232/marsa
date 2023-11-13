@@ -1625,7 +1625,7 @@
                                                                         $from = 'HRMS - 3.0';
                                                                         $subject = 'NCT-HRMD SHORT TERM CLEARANCE APPLICATION FILED BY '.strtoupper($logged_name);
                                                                         $message = '<html><body>';
-                                                                        $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                                        $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                                         $message .= "<h3>NCT-HRMS 3.0 SHORT TERM CLEARANCE APPLICATION DETAILS</h3>";
                                                                         $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                                                         $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>CLEARANCE STATUS:</strong> </td><td>Pending [On Process]</td></tr>";

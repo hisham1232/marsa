@@ -227,7 +227,7 @@
                                                                                 $from = 'HRMS - 3.0';
                                                                                 $subject = 'NCT-HRMD OFFICIAL DUTY FILED BY '.strtoupper($logged_name);
                                                                                 $message = '<html><body>';
-                                                                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                                                 $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                                                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                                                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Pending</td></tr>";

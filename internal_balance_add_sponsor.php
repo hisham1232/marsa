@@ -188,7 +188,7 @@
                                                 $subject = 'NCT-HRMD INTERNAL LEAVE BALANCE CREDITED';
                                                 $d = '-';
                                                 $message = '<html><body>';
-                                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                 $message .= "<h3>NCT-HRMS 3.0</h3>";
                                                 $message .= '<p>An internal leave balance has been added and credited into your HR account. Kindly login to HR System for more details.</p>';
                                                 $message .= "</body></html>";

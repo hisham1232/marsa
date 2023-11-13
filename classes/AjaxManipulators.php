@@ -196,6 +196,15 @@ class AjaxManipulators extends Db { //"extends" means inheriting class Db
 		return $result[$fieldname];
 	}
 
+	public function getInfostandardleave($tableName,$id,$fieldname) {
+		$sql = "SELECT $fieldname FROM ".$tableName." WHERE id = :id";
+		$stmt = $this->connect()->prepare($sql);
+		$stmt->bindValue(':id',$id);
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $result[$fieldname];
+	}
+
 	public function getIdsUsingPositionId2($id,$fieldname) {
 		$sql = "SELECT staff_id FROM employmentdetail WHERE isCurrent = 1 AND status_id = 1 AND position_id = :id";
 		$stmt = $this->connect()->prepare($sql);

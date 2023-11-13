@@ -20,6 +20,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +29,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo-light-icon.png">
     <title>NCT- HRMS 3.0</title>
     <!-- Bootstrap Core CSS -->
     <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -40,7 +41,8 @@
     <link href="css/demo_backtotop.css" rel="stylesheet">
     <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet">
 
-    <link href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+    <link href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
     <!-- Page plugins css -->
     <link href="assets/plugins/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet">
     <!-- Color picker plugins css -->
@@ -69,5 +71,6 @@
     <!-- fullCalendar -->
     <link rel="stylesheet" href="fullcalendar/dist/fullcalendar.min.css">
     <link rel="stylesheet" href="fullcalendar/dist/fullcalendar.print.min.css" media="print">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
 </head>

@@ -103,7 +103,7 @@
                                                     $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                     $d = '-';
                                                     $message = '<html><body>';
-                                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                     $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                     $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                     $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -265,7 +265,7 @@
                                                     $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                     $d = '-';
                                                     $message = '<html><body>';
-                                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                     $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                     $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                     $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -416,7 +416,7 @@
                                                 $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                 $d = '-';
                                                 $message = '<html><body>';
-                                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                 $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                 $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                 $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -565,7 +565,7 @@
                                                 $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                 $d = '-';
                                                 $message = '<html><body>';
-                                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                 $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                 $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                 $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -784,7 +784,7 @@
                                                     $subject = 'COMPLETED - NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                     $d = '-';
                                                     $message = '<html><body>';
-                                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                     $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                     $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                     $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";

@@ -54,7 +54,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Approved</td></tr>";
@@ -184,7 +184,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Approved</td></tr>";
@@ -344,7 +344,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Declined</td></tr>";
@@ -501,7 +501,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Declined</td></tr>";
@@ -627,7 +627,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Declined</td></tr>";
@@ -778,16 +778,15 @@
                                 }
                                 
                                 if($no_of_days >= $deanApprovalLimit) {
-                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
                                     $next_sequence_no       = $next['sequence_no'] + 1;
-                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                                 } else {
                                     $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
                                     $next_sequence_no       = $next['sequence_no'] + 1;
                                     $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
-
                                 }
                                 $nextApprover               = $get->singleReadFullQry($sql_for_next_approval);
                                 $nextApproverId             = $nextApprover['approver_id'];
@@ -832,7 +831,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -927,7 +926,6 @@
                                     //echo "<br/><br/>Next Sequence: ".$nextSequenceNumber;
                                     //echo "<br/>Next Approver: ".$nextApproverId;
                                     $stl_tbl_qry_update     = "UPDATE standardleave SET current_sequence_no = $nextSequenceNumber, current_approver_id = $nextApproverId WHERE id = $id";
-                                    
                                     $notes = $helper->cleanString($notes);
                                     $stl_tbl_qry_insert     = "INSERT INTO standardleave_history (standardleave_id, requestNo, staff_id, status, notes, ipAddress) VALUES ($id, '$requestNoS', '$staffId', '$ApprovalText', '$notes', '$ipAddress')";
                                     if($save->executeSQL($stl_tbl_qry_update)){
@@ -955,7 +953,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Pending</td></tr>";
@@ -1066,10 +1064,10 @@
                         }
 
                         if($no_of_days >= $deanApprovalLimit) {
-                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
                             $next_sequence_no       = $next['sequence_no'] + 1;
-                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                         } else {
                             $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
@@ -1119,7 +1117,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -1241,7 +1239,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Pending</td></tr>";
@@ -1351,10 +1349,10 @@
                         }
 
                         if($no_of_days >= $deanApprovalLimit) {
-                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
                             $next_sequence_no       = $next['sequence_no'] + 1;
-                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                         } else {
                             $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
@@ -1404,7 +1402,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -1535,7 +1533,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -1650,10 +1648,10 @@
                                 }
 
                                 if($no_of_days >= $deanApprovalLimit) {
-                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
                                     $next_sequence_no       = $next['sequence_no'] + 1;
-                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                                 } else {
                                     $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
@@ -1703,7 +1701,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -1834,7 +1832,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -1954,10 +1952,10 @@
                                 }
                                 
                                 if($no_of_days >= $deanApprovalLimit) {
-                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
                                     $next_sequence_no       = $next['sequence_no'] + 1;
-                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                                 } else {
                                     $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
@@ -2007,7 +2005,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -2128,7 +2126,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>Pending</td></tr>";
@@ -2238,10 +2236,10 @@
                         }
 
                         if($no_of_days >= $deanApprovalLimit) {
-                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
                             $next_sequence_no       = $next['sequence_no'] + 1;
-                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                         } else {
                             $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
@@ -2291,7 +2289,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -2412,7 +2410,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>Pending</td></tr>";
@@ -2521,10 +2519,10 @@
                         }
 
                         if($no_of_days >= $deanApprovalLimit) {
-                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                            $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
                             $next_sequence_no       = $next['sequence_no'] + 1;
-                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                            $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                         } else {
                             $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                             $next                   = $get->singleReadFullQry($next_seq_sql);
@@ -2574,7 +2572,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -2704,7 +2702,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -2818,10 +2816,10 @@
                                 }
 
                                 if($no_of_days >= $deanApprovalLimit) {
-                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
+                                    $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
                                     $next_sequence_no       = $next['sequence_no'] + 1;
-                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
+                                    $sql_for_next_approval  = "SELECT TOP 1 * FROM approvalsequence_standardleave_5 WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
                                 } else {
                                     $next_seq_sql           = "SELECT TOP 1 * FROM approvalsequence_standardleave WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
                                     $next                   = $get->singleReadFullQry($next_seq_sql);
@@ -2871,7 +2869,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -3001,7 +2999,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -3088,7 +3086,7 @@
 
                 } else if ($_GET['approvalType'] == 'otl') { //Overtime Leave
                     if($_GET['action'] == 1) { //If button Approve Selected Record is Clicked, NOT YET WORKING
-                        echo "<div class='text-primary'><i class='fas fa-info-circle'></i> Selected overtime WAS NOT DECLINED! KINDLY DECLINE THEM ONE AT A TIME <span style='float:right'><a href='' class='btn btn-danger'><i class='fas fa-times'></i> CLOSE</a></span></div>";
+                        echo "<div class='text-primary'><i class='fas fa-info-circle'></i> Selected overtime WAS NOT APPROVED! KINDLY APPROVE THEM ONE AT A TIME <span style='float:right'><a href='' class='btn btn-danger'><i class='fas fa-times'></i> CLOSE</a></span></div>";
                     } else if ($_GET['action'] == 2) { //If button Approve is Clicked --> Single approval only...
                         $id                         = $_GET['id'];
                         $position_id                = $_GET['position_id'];
@@ -3152,7 +3150,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OVERTIME LEAVE APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>REQUEST NUMBER:</strong> </td><td>".$requestNoS."</td></tr>";
@@ -3273,7 +3271,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OVERTIME LEAVE APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>REQUEST NUMBER:</strong> </td><td>".$requestNoS."</td></tr>";
@@ -3358,276 +3356,6 @@
                             }
                         }
                         echo "<div class='text-primary'><i class='fas fa-info-circle'></i> Overtime leave has been approved! <span style='float:right'><a href='' class='btn btn-danger'><i class='fas fa-times'></i> CLOSE</a></span></div>";
-                    } else if ($_GET['action'] == 3) { //If button Decline is Clicked --> Single decline only...
-                        $id                         = $_GET['id'];
-                        $requestNoS                 = $_GET['requestNoS'];
-                        $approverId                 = $_GET['approverId'];
-                        $approverEmail              = $_GET['approverEmail'];
-                        $notes                      = $_GET['notes'];
-                        $position_id                = $_GET['position_id'];
-                        $get                        = new DbaseManipulation;
-                        $save                       = new DbaseManipulation;
-                        $contact_details            = new DbaseManipulation;
-                        $getIdInfo                  = new DbaseManipulation;
-                        $ipAddress                  = $get->getUserIP();
-                        $to                         = array();
-                        $ApprovalText               = "Declined - ".$helper->fieldNameValue("staff_position",$myPositionId,'title');
-                        $rowsSeq                    = $helper->readData("SELECT DISTINCT(sequence_no) FROM internalleaveovertime_approvalsequence WHERE approver_id = $myPositionId");
-                        if($helper->totalCount != 0) {
-                            $sequence_numbers = array();
-                            foreach($rowsSeq as $row){
-                                array_push($sequence_numbers,$row['sequence_no']);
-                            }
-                            $myCurrentSequenceNo    = implode(', ', $sequence_numbers);
-                        }
-
-                        
-                        $next_seq_sql               = "SELECT TOP 1 * FROM internalleaveovertime_approvalsequence WHERE position_id = $position_id AND approver_id = $myPositionId AND active = 1 ORDER BY sequence_no";
-                        $next                       = $get->singleReadFullQry($next_seq_sql);
-                        $next_sequence_no           = $next['sequence_no'] + 1;
-                        $sql_for_next_approval      = "SELECT TOP 1 * FROM internalleaveovertime_approvalsequence WHERE position_id = $position_id AND sequence_no = $next_sequence_no AND active = 1 ORDER BY sequence_no";
-                        $nextApprover               = $get->singleReadFullQry($sql_for_next_approval);
-                        $nextApproverId             = $nextApprover['approver_id'];
-                        $nextSequenceNumber         = $nextApprover['sequence_no'];
-                        $isFinal                    = $next['is_final'];
-                        if($isFinal == 1) {
-                            //echo "<br/><br/>Next Sequence: ".$nextSequenceNumber;
-                            //echo "<br/>Next Approver: ".$nextApproverId;
-                            $stl_tbl_qry_update     = "UPDATE internalleaveovertime SET currentStatus = 'Declined' WHERE id = $id";
-                            $stl_tbl_qry_insert     = "INSERT INTO internalleaveovertime_history (internalleaveovertime_id, requestNo, staff_id, status, notes, ipAddress) VALUES ($id, '$requestNoS', '$staffId', '$ApprovalText', '$notes', '$ipAddress')";
-                            if($save->executeSQL($stl_tbl_qry_update)){
-                                if($save->executeSQL($stl_tbl_qry_insert)){
-                                    $stl_tbl_qry_update_draft     = "UPDATE internalleaveovertimedetails_draft SET status = 'Declined' WHERE internalleaveovertime_id = '$requestNoS'";
-                                    $save->executeSQL($stl_tbl_qry_update_draft);
-                                    //echo "<br/>Final Approver! Send Email Here"; exit;
-                                    $getIdInfo = new DbaseManipulation;
-                                    $history = $getIdInfo->readData("SELECT * FROM internalleaveovertime_history WHERE requestNo = '$requestNoS' ORDER BY id DESC");
-                                    $startEnd = $getIdInfo->singleReadFullQry("SELECT TOP 1 * FROM internalleaveovertimedetails_draft WHERE internalleaveovertime_id = '$requestNoS'");
-                                    $leaveDuration = 'From '.date('d/m/Y',strtotime($startEnd['startDate'])).' to '.date('d/m/Y',strtotime($startEnd['endDate']));
-                                    $staffRows = $helper->readData("SELECT staffId FROM internalleaveovertimedetails_draft WHERE internalleaveovertime_id = '$requestNoS' AND status = 'Declined'");
-                                    $arrStaff = array();
-                                    $to = array();
-                                    foreach($staffRows as $staffRow){
-                                        $names_staff = $getIdInfo->getStaffName($staffRow['staffId'],'firstName','secondName','thirdName','lastName');
-                                        array_push($arrStaff,$names_staff);
-                                        $staff_emails = $getIdInfo->getContactInfo(2,$staffRow['staffId'],'data');
-                                        array_push($to,$staff_emails);
-                                    }
-                                    $list_staff_names = implode(', ', $arrStaff);
-                                    $email_department = $getIdInfo->fieldNameValue("department",$logged_in_department_id,"name");
-                                    
-                                    $from_name = 'hrms@nct.edu.om';
-                                    $from = 'HRMS - 3.0';
-                                    $subject = 'NCT-HRMD OVERTIME LEAVE DECLINED BY '.strtoupper($logged_name);
-                                    $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
-                                    $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE DETAILS</h3>";
-                                    $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
-                                    $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>REQUEST NUMBER:</strong> </td><td>".$requestNoS."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB; width:400px'><td><strong>CURRENT STATUS:</strong> </td><td>DECLINED</td></tr>";
-                                    $message .= "<tr style='background:#E0F8F7'><td><strong>APPROVED BY:</strong> </td><td>".$logged_name."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB'><td><strong>NOTES/COMMENTS:</strong> </td><td>".$notes."</td></tr>";
-                                    $message .= "<tr style='background:#E0F8F7'><td><strong>DURATION:</strong> </td><td>".$leaveDuration."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB'><td><strong>NO. OF DAYS:</strong> </td><td>".$startEnd['total']."</td></tr>";
-                                    $message .= "<tr style='background:#E0F8F7'><td><strong>DEPARTMENT:</strong> </td><td>".$email_department."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB'><td><strong>STAFF NAMES:</strong> </td><td>".$list_staff_names."</td></tr>";
-                                    $message .= "</table>";
-                                    $message .= "<br/>";
-                                    $message .= "<h3 style='color:red'><i class='fa fa-exclamation-triangle'></i> Staff whose name appears in this overtime <strong>MUST Login and Logout in the Biometrics</strong> during these dates to avoid technical issues.</h3>";
-                                    $message .= "<hr/>";
-                                    $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE HISTORIES</h3>";
-                                    $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
-                                    $message .= "<tr style='background:#F8E0E0'>";
-                                        $message .= "<th><strong>STAFF NAME</strong></th>";
-                                        $message .= "<th><strong>NOTES/COMMENTS</strong></th>";
-                                        $message .= "<th><strong>STATUS</strong></th>";
-                                        $message .= "<th><strong>DATE/TIME</strong></th>";
-                                    $message .= "</tr>";
-                                    $ctr = 1; $stripeColor = "";    
-                                    foreach($history as $row){
-                                        if($ctr % 2 == 0) {
-                                            $stripeColor = '#FBEFEF';
-                                        } else {
-                                            $stripeColor = '#FBF2EF';
-                                        }
-                                        $fullStaffNameEmail = $getIdInfo->getStaffName($row['staff_id'],'firstName','secondName','thirdName','lastName');
-                                        $dateNotesEmail = date('d/m/Y H:i:s',strtotime($row['modified']));
-                                        $notesEmail = $row['notes'];
-                                        $statusEmail = $row['status'];
-                                        $message .= "
-                                            <tr style='background:$stripeColor'>
-                                                <td style='width:200px'>".$fullStaffNameEmail."</td>
-                                                <td style='width:200px'>".$notesEmail."</td>
-                                                <td style='width:200px'>".$statusEmail."</td>
-                                                <td style='width:200px'>".$dateNotesEmail."</td>
-                                            </tr>
-                                        ";
-                                        $ctr++;
-                                    }
-                                    $message .= "</table>";
-                                    $message .= "<br/>";
-                                    $message .= "</body></html>";
-                                    
-                                    //Email of the HR HoD or whoever wants to be informed...
-                                    $info = new DbaseManipulation;
-                                    $info2 = new DbaseManipulation;
-                                    $finals = $info2->readData("SELECT staff_id FROM internalleaveovertime_finalinform WHERE active = 1");
-                                    if($info2->totalCount != 0) {
-                                        foreach($finals as $final){
-                                            $staff_id = $final['staff_id'];
-                                            $email_address_finals = $info->getContactInfo(2,$staff_id,'data');
-                                            if(!in_array($email_address_finals, $to)){
-                                                array_push($to,$email_address_finals);
-                                            }
-                                        }
-                                    }
-
-                                    $filer = $getIdInfo->singleReadFullQry("SELECT TOP 1 requestNo, createdBy FROM internalleaveovertimefiled WHERE requestNo = '$requestNoS' AND isFinalized = 'Y'");
-                                    $filerStaffId = $filer['createdBy'];
-                                    $filerEmailAdd = $getIdInfo->getContactInfo(2,$filerStaffId,'data');
-
-                                    array_push($to,$logged_in_email,$filerEmailAdd);
-                                    //Save Email Information in the system_emails table...
-                                    $from_name = $from_name;
-                                    $from = $from;
-                                    $subject = $subject;
-                                    $message = $message;
-                                    $transactionDate = date('Y-m-d H:i:s',time());
-                                    $to = $to;
-                                    $recipients = implode(', ', $to);
-                                    $emailFields = [
-                                        'requestNo'=>$requestNoS,
-                                        'moduleName'=>'Overtime Approval',
-                                        'sentStatus'=>'Declined',
-                                        'recipients'=>$recipients,
-                                        'fromName'=>$from_name,
-                                        'comesFrom'=>$from,
-                                        'subject'=>$subject,
-                                        'message'=>$message,
-                                        'createdBy'=>$staffId,
-                                        'dateEntered'=>$transactionDate,
-                                        'dateSent'=>$transactionDate
-                                    ];
-                                    $saveEmail = new DbaseManipulation;
-                                    //echo $saveEmail->displayArr($emailFields);
-                                    $saveEmail->insert("system_emails",$emailFields);
-                                }
-                            }
-                        } else {
-                            //echo "<br/><br/>Next Sequence: ".$nextSequenceNumber;
-                            //echo "<br/>Next Approver: ".$nextApproverId;
-                            $stl_tbl_qry_update     = "UPDATE internalleaveovertime SET current_sequence_no = $nextSequenceNumber, current_approver_id = $nextApproverId, currentStatus = 'Declined' WHERE id = $id";
-                            $stl_tbl_qry_insert     = "INSERT INTO internalleaveovertime_history (internalleaveovertime_id, requestNo, staff_id, status, notes, ipAddress) VALUES ($id, '$requestNoS', '$staffId', '$ApprovalText', '$notes', '$ipAddress')";
-                            if($save->executeSQL($stl_tbl_qry_update)){
-                                if($save->executeSQL($stl_tbl_qry_insert)){
-                                    $stl_tbl_qry_update_draft     = "UPDATE internalleaveovertimedetails_draft SET status = 'Declined' WHERE internalleaveovertime_id = '$requestNoS'";
-                                    $save->executeSQL($stl_tbl_qry_update_draft);
-                                    //echo "<br/>Go To Next Approver! Send Email Here"; exit;
-                                    $getIdInfo = new DbaseManipulation;
-                                    $history = $getIdInfo->readData("SELECT * FROM internalleaveovertime_history WHERE requestNo = '$requestNoS' ORDER BY id DESC");
-                                    $startEnd = $getIdInfo->singleReadFullQry("SELECT TOP 1 * FROM internalleaveovertimedetails_draft WHERE internalleaveovertime_id = '$requestNoS'");
-                                    $leaveDuration = 'From '.date('d/m/Y',strtotime($startEnd['startDate'])).' to '.date('d/m/Y',strtotime($startEnd['endDate']));
-                                    $staffRows = $helper->readData("SELECT staffId FROM internalleaveovertimedetails_draft WHERE internalleaveovertime_id = '$requestNoS' AND status = 'Declined'");
-                                    $arrStaff = array();
-                                    $to = array();
-                                    foreach($staffRows as $staffRow){
-                                        $names_staff = $getIdInfo->getStaffName($staffRow['staffId'],'firstName','secondName','thirdName','lastName');
-                                        array_push($arrStaff,$names_staff);
-                                        $staff_emails = $getIdInfo->getContactInfo(2,$staffRow['staffId'],'data');
-                                        array_push($to,$staff_emails);
-                                    }
-                                    $list_staff_names = implode(', ', $arrStaff);
-                                    $email_department = $getIdInfo->fieldNameValue("department",$logged_in_department_id,"name");
-                                    
-                                    $from_name = 'hrms@nct.edu.om';
-                                    $from = 'HRMS - 3.0';
-                                    $subject = 'NCT-HRMD OVERTIME LEAVE DECLINED BY '.strtoupper($logged_name);
-                                    $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
-                                    $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE DETAILS</h3>";
-                                    $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
-                                    $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>REQUEST NUMBER:</strong> </td><td>".$requestNoS."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB; width:400px'><td><strong>CURRENT STATUS:</strong> </td><td>DECLINED</td></tr>";
-                                    $message .= "<tr style='background:#E0F8F7'><td><strong>APPROVED BY:</strong> </td><td>".$logged_name."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB'><td><strong>NOTES/COMMENTS:</strong> </td><td>".$notes."</td></tr>";
-                                    $message .= "<tr style='background:#E0F8F7'><td><strong>DURATION:</strong> </td><td>".$leaveDuration."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB'><td><strong>NO. OF DAYS:</strong> </td><td>".$startEnd['total']."</td></tr>";
-                                    $message .= "<tr style='background:#E0F8F7'><td><strong>DEPARTMENT:</strong> </td><td>".$email_department."</td></tr>";
-                                    $message .= "<tr style='background:#EFFBFB'><td><strong>STAFF NAMES:</strong> </td><td>".$list_staff_names."</td></tr>";
-                                    $message .= "</table>";
-                                    $message .= "<br/>";
-                                    $message .= "<h3 style='color:red'><i class='fa fa-exclamation-triangle'></i> Staff whose name appears in this overtime <strong>MUST Login and Logout in the Biometrics</strong> during these dates to avoid technical issues.</h3>";
-                                    $message .= "<hr/>";
-                                    $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE HISTORIES</h3>";
-                                    $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
-                                    $message .= "<tr style='background:#F8E0E0'>";
-                                        $message .= "<th><strong>STAFF NAME</strong></th>";
-                                        $message .= "<th><strong>NOTES/COMMENTS</strong></th>";
-                                        $message .= "<th><strong>STATUS</strong></th>";
-                                        $message .= "<th><strong>DATE/TIME</strong></th>";
-                                    $message .= "</tr>";
-                                    $ctr = 1; $stripeColor = "";    
-                                    foreach($history as $row){
-                                        if($ctr % 2 == 0) {
-                                            $stripeColor = '#FBEFEF';
-                                        } else {
-                                            $stripeColor = '#FBF2EF';
-                                        }
-                                        $fullStaffNameEmail = $getIdInfo->getStaffName($row['staff_id'],'firstName','secondName','thirdName','lastName');
-                                        $dateNotesEmail = date('d/m/Y H:i:s',strtotime($row['modified']));
-                                        $notesEmail = $row['notes'];
-                                        $statusEmail = $row['status'];
-                                        $message .= "
-                                            <tr style='background:$stripeColor'>
-                                                <td style='width:200px'>".$fullStaffNameEmail."</td>
-                                                <td style='width:200px'>".$notesEmail."</td>
-                                                <td style='width:200px'>".$statusEmail."</td>
-                                                <td style='width:200px'>".$dateNotesEmail."</td>
-                                            </tr>
-                                        ";
-                                        $ctr++;
-                                    }
-                                    $message .= "</table>";
-                                    $message .= "<br/>";
-                                    $message .= "</body></html>";
-                                    
-                                    $nextApprover = $getIdInfo->singleReadFullQry("SELECT TOP 1 staff_id FROM employmentdetail WHERE position_id = $nextApproverId AND isCurrent = 1 AND status_id = 1");
-                                    $nextApproversStaffId = $nextApprover['staff_id'];
-                                    $nextApproverEmailAdd = $getIdInfo->getContactInfo(2,$nextApproversStaffId,'data');
-
-                                    $filer = $getIdInfo->singleReadFullQry("SELECT TOP 1 requestNo, createdBy FROM internalleaveovertimefiled WHERE requestNo = '$requestNoS' AND isFinalized = 'Y'");
-                                    $filerStaffId = $filer['createdBy'];
-                                    $filerEmailAdd = $getIdInfo->getContactInfo(2,$filerStaffId,'data');
-
-                                    array_push($to,$logged_in_email,$nextApproverEmailAdd,$filerEmailAdd);
-                                    //Save Email Information in the system_emails table...
-                                    $from_name = $from_name;
-                                    $from = $from;
-                                    $subject = $subject;
-                                    $message = $message;
-                                    $transactionDate = date('Y-m-d H:i:s',time());
-                                    $to = $to;
-                                    $recipients = implode(', ', $to);
-                                    $emailFields = [
-                                        'requestNo'=>$requestNoS,
-                                        'moduleName'=>'Overtime Approval',
-                                        'sentStatus'=>'Declined',
-                                        'recipients'=>$recipients,
-                                        'fromName'=>$from_name,
-                                        'comesFrom'=>$from,
-                                        'subject'=>$subject,
-                                        'message'=>$message,
-                                        'createdBy'=>$staffId,
-                                        'dateEntered'=>$transactionDate,
-                                        'dateSent'=>$transactionDate
-                                    ];
-                                    $saveEmail = new DbaseManipulation;
-                                    //echo $saveEmail->displayArr($emailFields);
-                                    $saveEmail->insert("system_emails",$emailFields);
-                                }
-                            }
-                        }
-                        echo "<div class='text-primary'><i class='fas fa-info-circle'></i> Overtime leave has been Declined! <span style='float:right'><a href='' class='btn btn-danger'><i class='fas fa-times'></i> CLOSE</a></span></div>";
                     }
                 }      
             } else {
@@ -3644,7 +3372,6 @@
                         $stl_tbl_qry_update     = "UPDATE standardleave SET currentStatus = 'Cancelled' WHERE id = $id";
                         $stl_tbl_qry_insert     = "INSERT INTO standardleave_history (standardleave_id, requestNo, staff_id, status, notes, ipAddress) VALUES ($id, '$requestNo', '$staffId', '$ApprovalText', '$notes', '$ipAddress')";
                         $stl_tbl_qry_return_credit = "UPDATE internalleavebalancedetails SET status = 'Cancelled', total = 0 WHERE internalleavebalance_id = '$requestNo'";
-						$save->executeSQL("UPDATE emergencyleavebalancedetails SET status = 'Cancelled', total = 0 WHERE emergencyleavebalance_id = '$requestNo'");
                         if($save->executeSQL($stl_tbl_qry_update)){ 
                             if($save->executeSQL($stl_tbl_qry_return_credit)) {                    
                                 if($save->executeSQL($stl_tbl_qry_insert)){
@@ -3657,7 +3384,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$info['leavetype'].') CANCELLED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$info['leavetype'].") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Cancelled</td></tr>";
@@ -3790,7 +3517,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY CANCELLED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>Cancelled</td></tr>";
@@ -3919,7 +3646,7 @@
                                 $sqlStLApproval = "UPDATE approvalsequence_standardleave SET approver_id = $myPositionId WHERE approver_id = $delegatorPositionId";
                                 $helper->executeSQL($sqlStLApproval);
 
-                                $sqlStLApproval5 = "UPDATE approvalsequence_standardleave SET approver_id = $myPositionId WHERE approver_id = $delegatorPositionId";
+                                $sqlStLApproval5 = "UPDATE approvalsequence_standardleave_5 SET approver_id = $myPositionId WHERE approver_id = $delegatorPositionId";
                                 $helper->executeSQL($sqlStLApproval5);
 
                                 if($user_type == 6) {
@@ -3967,5 +3694,6 @@
             include_once('not_allowed.php');
         }
     }
-?>             
+?>
+
 </html>

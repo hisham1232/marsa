@@ -54,7 +54,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Approved</td></tr>";
@@ -184,7 +184,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Approved</td></tr>";
@@ -344,7 +344,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Declined</td></tr>";
@@ -501,7 +501,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Declined</td></tr>";
@@ -627,7 +627,7 @@
                                 $shLDeptId = $getIdInfo->employmentIDs($shl['staff_id'],'department_id');
                                 $email_department = $getIdInfo->fieldNameValue("department",$shLDeptId,"name");
                                 $message = '<html><body>';
-                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                 $message .= "<h3>NCT-HRMS 3.0 SHORT LEAVE DETAILS</h3>";
                                 $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                 $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Declined</td></tr>";
@@ -831,7 +831,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -953,7 +953,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Pending</td></tr>";
@@ -1117,7 +1117,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -1239,7 +1239,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Pending</td></tr>";
@@ -1402,7 +1402,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -1533,7 +1533,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -1701,7 +1701,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -1832,7 +1832,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD STANDARD LEAVE ('.$leaveType.') DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$leaveType.") DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -2005,7 +2005,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -2126,7 +2126,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>Pending</td></tr>";
@@ -2289,7 +2289,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>APPROVED</td></tr>";
@@ -2410,7 +2410,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>Pending</td></tr>";
@@ -2572,7 +2572,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -2702,7 +2702,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -2869,7 +2869,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -2999,7 +2999,7 @@
                                             $from = 'HRMS - 3.0';
                                             $subject = 'NCT-HRMD OFFICIAL DUTY DECLINED BY '.strtoupper($logged_name);
                                             $message = '<html><body>';
-                                            $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                            $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                             $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                             $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                             $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>DECLINED</td></tr>";
@@ -3150,7 +3150,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OVERTIME LEAVE APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>REQUEST NUMBER:</strong> </td><td>".$requestNoS."</td></tr>";
@@ -3271,7 +3271,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OVERTIME LEAVE APPROVAL BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OVERTIME LEAVE DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>REQUEST NUMBER:</strong> </td><td>".$requestNoS."</td></tr>";
@@ -3384,7 +3384,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD STANDARD LEAVE ('.$info['leavetype'].') CANCELLED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 STANDARD LEAVE (".$info['leavetype'].") DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>LEAVE STATUS:</strong> </td><td>Cancelled</td></tr>";
@@ -3517,7 +3517,7 @@
                                     $from = 'HRMS - 3.0';
                                     $subject = 'NCT-HRMD OFFICIAL DUTY CANCELLED BY '.strtoupper($logged_name);
                                     $message = '<html><body>';
-                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                     $message .= "<h3>NCT-HRMS 3.0 OFFICIAL DUTY DETAILS</h3>";
                                     $message .= '<table style="border-color:#666; width:800px" cellpadding="10">';
                                     $message .= "<tr style='background:#E0F8F7; width:400px'><td><strong>STATUS:</strong> </td><td>Cancelled</td></tr>";

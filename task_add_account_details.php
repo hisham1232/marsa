@@ -29,31 +29,32 @@
             }                                
 ?>
 
-            <body class="fix-header fix-sidebar card-no-border">
-                <!-- <div class="preloader">
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- <div class="preloader">
                     <svg class="circular" viewBox="25 25 50 50">
                         <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
                 </div> -->
-                <div id="main-wrapper">
-                    <header class="topbar">
-                        <?php include('menu_top.php'); ?>
-                    </header>
-                    <?php include('menu_left.php'); ?>
-                    <div class="page-wrapper">
-                        <div class="container-fluid">
-                            <div class="row page-titles">
-                                <div class="col-md-5 col-xs-18 align-self-center">
-                                    <h3 class="text-themecolor m-b-0 m-t-0">Create Account Task Details <?php //echo $department_id; ?></h3>
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                        <li class="breadcrumb-item">Account Task</li>
-                                        <li class="breadcrumb-item">Create Account Details</li>
-                                    </ol>
-                                </div>
-                                <?php include('include_time_in_info.php'); ?>
-                            </div>
-                            <!--Will do all the submit action here until sending of emails to those staff involve in the task assigned-->
-                            <?php
+    <div id="main-wrapper">
+        <header class="topbar">
+            <?php include('menu_top.php'); ?>
+        </header>
+        <?php include('menu_left.php'); ?>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 col-xs-18 align-self-center">
+                        <h3 class="text-themecolor m-b-0 m-t-0">Create Account Task Details
+                            <?php //echo $department_id; ?></h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item">Account Task</li>
+                            <li class="breadcrumb-item">Create Account Details</li>
+                        </ol>
+                    </div>
+                    <?php include('include_time_in_info.php'); ?>
+                </div>
+                <!--Will do all the submit action here until sending of emails to those staff involve in the task assigned-->
+                <?php
                                 if(isset($_POST['submitSection'])) {
                                     $taskId = 2;
                                     if($id_taskprocess != $taskId) {
@@ -105,7 +106,7 @@
                                                     $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                     $d = '-';
                                                     $message = '<html><body>';
-                                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                     $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                     $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                     $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -197,19 +198,21 @@
                                                         $saveEmail->insert("system_emails",$emailFields);
                                                     }
                             ?>
-                                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
-                                                        <p>Section has been assigned to the staff successfully. Next Task: <strong>Creating Email Account</strong> has been forwarded to the next staff in charge.</p>
-                                                    </div>    
-                            <?php                    
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
+                    <p>Section has been assigned to the staff successfully. Next Task: <strong>Creating Email
+                            Account</strong> has been forwarded to the next staff in charge.</p>
+                </div>
+                <?php                    
                                                 }
                                             }
                                         }
                                     }    
                                 }
                             ?>
-                            <?php
+                <?php
                                 if(isset($_POST['submitEmail'])) {
                                     $taskId = 3;
                                     if($id_taskprocess != $taskId) {
@@ -269,7 +272,7 @@
                                                     $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                     $d = '-';
                                                     $message = '<html><body>';
-                                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                     $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                     $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                     $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -363,19 +366,21 @@
                                                         $saveEmail->insert("system_emails",$emailFields);
                                                     }
                             ?>
-                                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
-                                                        <p>Email account has been created successfully. Next Task: <strong>Creating Active Directory Account</strong> has been forwarded to the next staff in charge.</p>
-                                                    </div>    
-                            <?php                    
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
+                    <p>Email account has been created successfully. Next Task: <strong>Creating Active Directory
+                            Account</strong> has been forwarded to the next staff in charge.</p>
+                </div>
+                <?php                    
                                                 }
                                             }
                                         }
                                     }    
                                 }
                             ?>
-                            <?php
+                <?php
                                 if(isset($_POST['submitActiveDirectory'])) {
                                     $taskId = 4;
                                     if($id_taskprocess != $taskId) {
@@ -420,7 +425,7 @@
                                                 $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                 $d = '-';
                                                 $message = '<html><body>';
-                                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                 $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                 $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                 $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -513,18 +518,20 @@
                                                     $saveEmail->insert("system_emails",$emailFields);
                                                 }
                             ?>
-                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
-                                                    <p>Active directory account has been created successfully. Next Task: <strong>Creating User Accounts to NCT Apps</strong> has been forwarded to the next staff in charge.</p>
-                                                </div>    
-                            <?php                    
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
+                    <p>Active directory account has been created successfully. Next Task: <strong>Creating User Accounts
+                            to NCT Apps</strong> has been forwarded to the next staff in charge.</p>
+                </div>
+                <?php                    
                                             }
                                         }
                                     }    
                                 }
                             ?>
-                            <?php
+                <?php
                                 if(isset($_POST['submitSystemUser'])) {
                                     $taskId = 5;
                                     if($id_taskprocess != $taskId) {
@@ -569,7 +576,7 @@
                                                 $subject = 'NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                 $d = '-';
                                                 $message = '<html><body>';
-                                                $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                 $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                 $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                 $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -662,18 +669,20 @@
                                                     $saveEmail->insert("system_emails",$emailFields);
                                                 }
                             ?>
-                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
-                                                    <p>User accounts for NCT Apps has been created successfully. Next Task: <strong>Uploading Picture/Photo</strong> has been forwarded to the next staff in charge.</p>
-                                                </div>    
-                            <?php                    
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
+                    <p>User accounts for NCT Apps has been created successfully. Next Task: <strong>Uploading
+                            Picture/Photo</strong> has been forwarded to the next staff in charge.</p>
+                </div>
+                <?php                    
                                             }
                                         }
                                     }    
                                 }
                             ?>
-                            <?php
+                <?php
                                 if(isset($_POST['submitUploadPicture'])) {
                                     $taskId = 6;
                                     if($id_taskprocess != $taskId) {
@@ -695,33 +704,36 @@
                                                 }
                                             if ($_FILES["fileToUpload"]["size"] > 2097152) {
                                             ?>
-                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
-                                                    <p>Sorry, file size is too large. Files size should be up to 2MB only.</p>
-                                                </div>    
-                                            <?php            
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
+                    <p>Sorry, file size is too large. Files size should be up to 2MB only.</p>
+                </div>
+                <?php            
                                                 $uploadOk = 0;
                                             }
                                             // Allow certain file formats
                                             if(!in_array($_FILES['fileToUpload']['type'], $acceptable) && (!empty($_FILES["fileToUpload"]["type"]))) {
                                             ?>
-                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
-                                                    <p>Sorry, only JPG, JPEG, PNG, GIF, PDF files are allowed to upload. File type not accepted.</p>
-                                                </div>    
-                                            <?php                
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
+                    <p>Sorry, only JPG, JPEG, PNG, GIF, PDF files are allowed to upload. File type not accepted.</p>
+                </div>
+                <?php                
                                                 $uploadOk = 0;
                                             }
                                             if ($uploadOk == 0) {
                                             ?>
-                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
-                                                    <p>File type and file size BOTH not acceptable. File type not accepted.</p>
-                                                </div>
-                                            <?php        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
+                    <p>File type and file size BOTH not acceptable. File type not accepted.</p>
+                </div>
+                <?php        
                                             } else { //if everything is ok, try to upload file
                                                 $temp = explode(".", $_FILES["fileToUpload"]["name"]);
                                                 $extension = end($temp);
@@ -730,20 +742,21 @@
                                                     $new_image = $target_dir.$new_file_name;
                                                     goto hell;
                                             ?>
-                                                    <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                         <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
                                                         <p>Staff's HR Account has been deactivated! Staff's Account has been put in the Archive List.<br/>The system has already send request to ETC to deactivate all related <strong>e-service access, e-mail,</strong> etc.</p>
                                                     </div> -->
-                                            <?php                
+                <?php                
                                                 } else {
                                             ?>
-                                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
-                                                        <p>Sorry, there was an error uploading your attachment, please try again.</p>
-                                                    </div>       
-                                            <?php                
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Upload Failed!</h4>
+                    <p>Sorry, there was an error uploading your attachment, please try again.</p>
+                </div>
+                <?php                
                                                 }
                                             }
                                         } else {    
@@ -788,7 +801,7 @@
                                                     $subject = 'COMPLETED - NCT-HRMD ACCOUNT CREATION FOR '.strtoupper($email_staffName);
                                                     $d = '-';
                                                     $message = '<html><body>';
-                                                    $message .= '<img src="http://apps.nct.edu.om/hrmd2/img/hr-logo-email.png" width="419" height="65" />';
+                                                    $message .= '<img src="https://hr.nct.edu.om/img/hr-logo-email.png" width="419" height="65" />';
                                                     $message .= "<h3>A task has been assigned to you by the NCT. Click <a target='_blank' href='http://apps1.nct.edu.om:4443/hrmd3/task_add_account_details.php?id=".$staff_id."&t=".$taskprocess_id."'>HERE</a> to access the system and provide action to your assigned task.</h3>";
                                                     $message .= "<h4>NOTE: If you have already created the account of the staff assigned to you, kindly disregard this email.</h4>";
                                                     $message .= "<h3>NCT-HRMS 3.0 ACCOUNT CREATION DETAILS AS FOLLOWS</h3>";
@@ -881,429 +894,524 @@
                                                         $saveEmail->insert("system_emails",$emailFields);
                                                     }
                                                     ?>
-                                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
-                                                        <p>Staff photo/picture has been created successfully. <strong>All task has been completed for this request</strong>.</p>
-                                                    </div>    
-                                                    <?php                    
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="alert-heading"><i class="fa fa-info-circle"></i> Success!</h4>
+                    <p>Staff photo/picture has been created successfully. <strong>All task has been completed for this
+                            request</strong>.</p>
+                </div>
+                <?php                    
                                                 }
                                             }
                                         }    
                                     }    
                                 }
                             ?>
-                            <!--End-->
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="card">
-                                        <div class="card-header bg-light-info">
-                                            <div class="d-flex flex-wrap">
-                                                <div>
-                                                    <h3 class="card-title">Staff Information</h3>
-                                                    <h6 class="card-subtitle font-italic">Details of New Staff. Details was entered from ADD New Staff Module</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <form class="form-horizontal p-t-5" action="" method="POST" novalidate enctype="multipart/form-data">
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Staff ID</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                                <input type="text" value="<?php echo $result['staffId']; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fa fa-user"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Civil ID</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo $result['civilId']; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fa fa-key"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Staff Name</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo preg_replace('/( )+/', ' ',$result['staffName']); ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fas fa-id-card"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Mobile</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo $mobile; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fas fa-mobile-alt"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>    
-                                                </div>                                        
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Department</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo $result['department']; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fas fa-briefcase"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>    
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Sponsor</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo $result['sponsor']; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fas fa-clipboard-list"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Job Title</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo $result['jobtitle']; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fas fa-book"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>    
-                                                </div>                                            
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Join Date</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo date('d/m/Y',strtotime($result['joinDate'])); ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="far fa-calendar-alt"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>    
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Section</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo $result['section']; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="far fa-building"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>    
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-3 control-label">Email</label>
-                                                    <div class="col-sm-9">
-                                                        <div class="controls">
-                                                            <div class="input-group">
-                                                            <input type="text" value="<?php echo $email_add; ?>" class="form-control" readonly />
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" id="basic-addon2">
-                                                                        <i class="fas fa-envelope"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>    
-                                                </div>
-                                            </form>
-                                        </div>
+                <!--End-->
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-header bg-light-info">
+                                <div class="d-flex flex-wrap">
+                                    <div>
+                                        <h3 class="card-title">Staff Information</h3>
+                                        <h6 class="card-subtitle font-italic">Details of New Staff. Details was entered
+                                            from ADD New Staff Module</h6>
                                     </div>
                                 </div>
-                                <?php
+                            </div>
+                            <div class="card-body">
+                                <form class="form-horizontal p-t-5" action="" method="POST" novalidate
+                                    enctype="multipart/form-data">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Staff ID</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['staffId']; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fa fa-user"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Civil ID</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['civilId']; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fa fa-key"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Staff Name</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text"
+                                                        value="<?php echo preg_replace('/( )+/', ' ',$result['staffName']); ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fas fa-id-card"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Mobile</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $mobile; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fas fa-mobile-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Department</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['department']; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fas fa-briefcase"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Sponsor</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['sponsor']; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fas fa-clipboard-list"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Job Title</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['jobtitle']; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fas fa-book"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Join Date</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text"
+                                                        value="<?php echo date('d/m/Y',strtotime($result['joinDate'])); ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="far fa-calendar-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Section</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $result['section']; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="far fa-building"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <div class="controls">
+                                                <div class="input-group">
+                                                    <input type="text" value="<?php echo $email_add; ?>"
+                                                        class="form-control" readonly />
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            <i class="fas fa-envelope"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
                                     if($user_type == 0 || $user_type == 1 || $user_type == 2) {
                                         ?>
-                                        <div class="col-lg-7">
-                                            <div class="card">
-                                                <div class="card-header bg-light-info">
-                                                    <div class="d-flex flex-wrap">
-                                                        <div>
-                                                            <h3 class="card-title">Create Staff's Accounts</h3>
-                                                            <h6 class="card-subtitle font-italic">Approval Details</h6>
-                                                        </div>
-                                                        <div class="ml-auto">
-                                                            <h4> Task ID: <span class="text-primary"><?php echo $requestNo; ?></span> / Status: <span class="text-primary"><?php echo $taskStatus; ?></span></h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="ribbon-vwrapper card">
-                                                        <div class="ribbon ribbon-info ribbon-vertical-l"><i class="fa fa-user"></i></div>
-                                                        <h3 class="ribbon-content">Create HR Staff Account</h3>
-                                                        <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,1,'status'); ?></span> /
-                                                                <?php
+                    <div class="col-lg-7">
+                        <div class="card">
+                            <div class="card-header bg-light-info">
+                                <div class="d-flex flex-wrap">
+                                    <div>
+                                        <h3 class="card-title">Create Staff's Accounts</h3>
+                                        <h6 class="card-subtitle font-italic">Approval Details</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <h4> Task ID: <span class="text-primary"><?php echo $requestNo; ?></span> /
+                                            Status: <span class="text-primary"><?php echo $taskStatus; ?></span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-info ribbon-vertical-l"><i class="fa fa-user"></i></div>
+                                    <h3 class="ribbon-content">Create HR Staff Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,1,'status'); ?></span>
+                                            /
+                                            <?php
                                                                     $created_by = $task->getTaskStatus($id,1,'staff_id');
                                                                 ?>
-                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,1,'transactionDate'))); ?></span></span></p>
-                                                        <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,1,'comments'); ?></i></p>
-                                                    </div>
-                                                    <!--2. Assigning Section Portion-->
-                                                    <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,1,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,1,'comments'); ?></i></p>
+                                </div>
+                                <!--2. Assigning Section Portion-->
+                                <?php
                                                         if($task->getTaskStatus($id,2,'status') == 'Pending') {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                <h3 class="ribbon-content">Assign Section</h3>
-                                                                <p class="ribbon-content">
-                                                                    <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                    <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                </p>
-                                                                <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                <div class="form-group">
-                                                                        <select name="section_id" class="form-control select" required>
-                                                                            <option value="">Select Section Here</option>
-                                                                            <?php
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section
+                                        <?php
+                                                                                                                                                echo "SELECT id, name FROM section WHERE department_id = $department_id ORDER BY id";          
+
+                                                                                                                                                ?>
+                                    </h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <select name="section_id" class="form-control select" required>
+                                                <option value="">Select Section Here</option>
+                                                <?php
                                                                                 $dropdown = new DbaseManipulation; 
                                                                                 $rows = $dropdown->readData("SELECT id, name FROM section WHERE department_id = $department_id ORDER BY id");
+                                                                                                                                                         echo "SELECT id, name FROM section WHERE department_id = $department_id ORDER BY id";          
+
                                                                                 foreach ($rows as $row) {
                                                                             ?>
-                                                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-                                                                            <?php            
+                                                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?>
+                                                </option>
+                                                <?php  
                                                                                 }    
                                                                             ?>
-                                                                        </select> 
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="hidden" name="taskId" value="2" />
-                                                                        <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <button type="submit" name="submitSection" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                        <button type="submit" name="declineSection" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                    <?php        
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="2" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitSection" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineSection" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                         } else {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                <h3 class="ribbon-content">Assign Section</h3>
-                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                <?php
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                     $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                 ?>
-                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                            </div>
-                                                    <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <?php
                                                         }
                                                     ?>
-                                                    <!--3. Creating Email Account Portion-->
-                                                    <?php
+                                <!--3. Creating Email Account Portion-->
+                                <?php
                                                         if($task->getTaskStatus($id,3,'status') == 'Pending') {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                <h3 class="ribbon-content">Create Email Account</h3>
-                                                                <p class="ribbon-content">
-                                                                    <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                    <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                </p>
-                                                                <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                    <div class="form-group">
-                                                                        <input type="email" name="email_address" class="form-control" placeholder="name@nct.edu.om" required/> 
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="hidden" name="taskId" value="3" />
-                                                                        <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <button type="submit" name="submitEmail" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                        <button type="submit" name="declineEmail" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                    <?php        
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <input type="email" name="email_address" class="form-control"
+                                                placeholder="name@nct.edu.om" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="3" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitEmail" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineEmail" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                         } else {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                <h3 class="ribbon-content">Create Email Accounts</h3>
-                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                <?php
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Accounts</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                     $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                 ?>
-                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                        <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                            </div>
-                                                    <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <?php
                                                         }
-                                                    ?>      
-                                                    <!--4. Creating Active Directory Account Portion-->
-                                                    <?php
+                                                    ?>
+                                <!--4. Creating Active Directory Account Portion-->
+                                <?php
                                                         if($task->getTaskStatus($id,4,'status') == 'Pending') {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                <p class="ribbon-content">
-                                                                    <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                    <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                </p>
-                                                                <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                    <div class="form-group">
-                                                                        <input type="hidden" name="taskId" value="4" />
-                                                                        <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <button type="submit" name="submitActiveDirectory" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                        <button type="submit" name="declineActiveDirectory" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                    <?php        
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="4" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitActiveDirectory" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineActiveDirectory"
+                                                class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline
+                                                Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                         } else {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                <?php
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                     $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                 ?>
-                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                        <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                            </div>
-                                                    <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <?php
                                                         }
                                                     ?>
-                                                    <!--5. Creating System User Account Portion-->
-                                                    <?php
+                                <!--5. Creating System User Account Portion-->
+                                <?php
                                                         if($task->getTaskStatus($id,5,'status') == 'Pending') {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                <p class="ribbon-content">
-                                                                    <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                    <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                </p>
-                                                                <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                    <div class="form-group">
-                                                                        <input type="hidden" name="taskId" value="5" />
-                                                                        <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <button type="submit" name="submitSystemUser" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                        <button type="submit" name="declineSystemUser" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                    <?php        
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="5" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitSystemUser" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineSystemUser" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                         } else {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                                <?php
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                     $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                                 ?>
-                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                        <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                            </div>
-                                                    <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <?php
                                                         }
                                                     ?>
-                                                    <!--6. Uploading Picture Portion-->
-                                                    <?php
+                                <!--6. Uploading Picture Portion-->
+                                <?php
                                                         if($task->getTaskStatus($id,6,'status') == 'Pending') {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-custom ribbon-vertical-l"><i class="fas fa-address-card"></i></div>
-                                                                <h3 class="ribbon-content">Upload Picture</h3>
-                                                                <p class="ribbon-content">
-                                                                    <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                    <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                </p>
-                                                                <form class="form-horizontal m-t-5" action="" method="POST" enctype="multipart/form-data">
-                                                                    <div class="form-group">
-                                                                        <input type="file" name="fileToUpload" accept=".jpg, .jpeg, .png, .pdf, .gif" class="form-control" placeholder="Select image file" required/>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <input type="hidden" name="taskId" value="6" />
-                                                                        <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <button type="submit" name="submitUploadPicture" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                        <button type="submit" name="declineUploadPicture" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                    <?php        
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-custom ribbon-vertical-l"><i
+                                            class="fas fa-address-card"></i></div>
+                                    <h3 class="ribbon-content">Upload Picture</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST"
+                                        enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <input type="file" name="fileToUpload"
+                                                accept=".jpg, .jpeg, .png, .pdf, .gif" class="form-control"
+                                                placeholder="Select image file" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="6" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitUploadPicture" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineUploadPicture" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                         } else {
                                                     ?>
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-custom ribbon-vertical-l"><i class="fas fa-address-card"></i></div>
-                                                                <h3 class="ribbon-content">Upload Picture</h3>
-                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,6,'status'); ?></span> /
-                                                                <?php
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-custom ribbon-vertical-l"><i
+                                            class="fas fa-address-card"></i></div>
+                                    <h3 class="ribbon-content">Upload Picture</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,6,'status'); ?></span>
+                                            /
+                                            <?php
                                                                     $created_by = $task->getTaskStatus($id,6,'staff_id');
                                                                 ?>
-                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,6,'transactionDate'))); ?></span></span></p>
-                                                        <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,6,'comments'); ?></i></p>
-                                                            </div>
-                                                    <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,6,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,6,'comments'); ?></i></p>
+                                </div>
+                                <?php
                                                         }
                                                     ?>
-                                                </div>
-                                                <!--end card body approval-->
-                                            </div>
-                                            <!--end card approval-->
-                                        </div>
-                                <?php
+                            </div>
+                            <!--end card body approval-->
+                        </div>
+                        <!--end card approval-->
+                    </div>
+                    <?php
                                     } else {
                                         if($taskStatus != "Completed") {
                                             $check = new DbaseManipulation;
@@ -1312,699 +1420,968 @@
                                                 $myTaskId = $rowCheck['task_id'];
                                                 //echo $myTaskId;
                                                 ?>
-                                                <div class="col-lg-7">
-                                                    <div class="card">
-                                                        <div class="card-header bg-light-info">
-                                                            <div class="d-flex flex-wrap">
-                                                                <div>
-                                                                    <h3 class="card-title">Create Staff's Accounts</h3>
-                                                                    <h6 class="card-subtitle font-italic">Approval Details</h6>
-                                                                </div>
-                                                                <div class="ml-auto">
-                                                                    <h4> Task ID: <span class="text-primary"><?php echo $requestNo; ?></span> / Status: <span class="text-primary"><?php echo $taskStatus; ?></span></h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <!--1. Available for all since this one is finished already upon creation of the user account from staff_add_new.php-->
-                                                            <div class="ribbon-vwrapper card">
-                                                                <div class="ribbon ribbon-info ribbon-vertical-l"><i class="fa fa-user"></i></div>
-                                                                <h3 class="ribbon-content">Create HR Staff Account</h3>
-                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,1,'status'); ?></span> /
-                                                                        <?php
+                    <div class="col-lg-7">
+                        <div class="card">
+                            <div class="card-header bg-light-info">
+                                <div class="d-flex flex-wrap">
+                                    <div>
+                                        <h3 class="card-title">Create Staff's Accounts</h3>
+                                        <h6 class="card-subtitle font-italic">Approval Details</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <h4> Task ID: <span class="text-primary"><?php echo $requestNo; ?></span> /
+                                            Status: <span class="text-primary"><?php echo $taskStatus; ?></span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!--1. Available for all since this one is finished already upon creation of the user account from staff_add_new.php-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-info ribbon-vertical-l"><i class="fa fa-user"></i></div>
+                                    <h3 class="ribbon-content">Create HR Staff Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,1,'status'); ?></span>
+                                            /
+                                            <?php
                                                                             $created_by = $task->getTaskStatus($id,1,'staff_id');
                                                                         ?>
-                                                                        <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,1,'transactionDate'))); ?></span></span></p>
-                                                                <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,1,'comments'); ?></i></p>
-                                                            </div>
-                                                            <!--2. Assigning Section Portion-->
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,1,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,1,'comments'); ?></i></p>
+                                </div>
+                                <!--2. Assigning Section Portion-->
+                                <?php
                                                                 if($myTaskId == 2) {
                                                                     if($department_id == $logged_in_department_id) {
                                                                         if($task->getTaskStatus($id,2,'status') == 'Pending') {          
                                                                 ?>
-                                                                            <div class="ribbon-vwrapper card">
-                                                                                <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                                <h3 class="ribbon-content">Assign Section</h3>
-                                                                                <p class="ribbon-content">
-                                                                                    <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                                    <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                                </p>
-                                                                                <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                                <div class="form-group">
-                                                                                        <select name="section_id" class="form-control select" required>
-                                                                                            <option value="">Select Section Here</option>
-                                                                                            <?php
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <select name="section_id" class="form-control select" required>
+                                                <option value="">Select Section Here</option>
+                                                <?php
                                                                                                 $dropdown = new DbaseManipulation; 
                                                                                                 $rows = $dropdown->readData("SELECT id, name FROM section WHERE department_id = $department_id ORDER BY id");
                                                                                                 foreach ($rows as $row) {
                                                                                             ?>
-                                                                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-                                                                                            <?php            
+                                                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?>
+                                                </option>
+                                                <?php            
                                                                                                 }    
                                                                                             ?>
-                                                                                        </select> 
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                                    </div>
-                                                                                    <div class="form-group">
-                                                                                        <button type="submit" name="submitSection" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                                        <button type="submit" name="declineSection" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                <?php        
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitSection" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineSection" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                                         } else {
                                                                 ?>
-                                                                            <!--Section Assignment History-->
-                                                                            <div class="ribbon-vwrapper card">
-                                                                                <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                                <h3 class="ribbon-content">Assign Section</h3>
-                                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                                <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                     $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                                 ?>
-                                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                                <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                            </div>
-                                                                            <!--Section Assignment History Ends-->
-                                                                            <!--Email Assignment History-->
-                                                                            <div class="ribbon-vwrapper card">
-                                                                                <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                                <h3 class="ribbon-content">Create Email Account</h3>
-                                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                                <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                     $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                                 ?>
-                                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                                <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                            </div>
-                                                                            <!--Email Assignment History Ends-->
-                                                                            <!--AD Assignment History-->
-                                                                            <div class="ribbon-vwrapper card">
-                                                                                <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                                <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                                <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <!--AD Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                     $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                                 ?>
-                                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                                                <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                                            </div>
-                                                                            <!--AD Assignment History Ends-->
-                                                                            <!--System Users Assignment History-->
-                                                                            <div class="ribbon-vwrapper card">
-                                                                                <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                                <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                                <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                                                <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--AD Assignment History Ends-->
+                                <!--System Users Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                     $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                                                 ?>
-                                                                                <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                                                <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                                            </div>
-                                                                            <!--System Users Assignment History Ends-->
-                                                                <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <!--System Users Assignment History Ends-->
+                                <?php
                                                                         }
                                                                     } else {
                                                                 ?>
-                                                                            <div class="ribbon-vwrapper card">
-                                                                                <div class="ribbon ribbon-danger ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                                <h3 class="ribbon-content text-danger"><i class="fa fa-exclamation-triangle"></i> Open Assign Section Module Failed</h3>
-                                                                                <p class="ribbon-content"><span class="text-danger">System Message: You are not allowed to assign section to the staff selected for the reason that you and the staff does not belong to the same department.</span></p>
-                                                                            </div>
-                                                                <?php            
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content text-danger"><i class="fa fa-exclamation-triangle"></i>
+                                        Open Assign Section Module Failed</h3>
+                                    <p class="ribbon-content"><span class="text-danger">System Message: You are not
+                                            allowed to assign section to the staff selected for the reason that you and
+                                            the staff does not belong to the same department.</span></p>
+                                </div>
+                                <?php            
                                                                     }  
                                                                 }    
                                                             ?>
-                                                            <!--3. Creating Email Account Portion-->
-                                                            <?php
+                                <!--3. Creating Email Account Portion-->
+                                <?php
                                                                 if($myTaskId == 3) {
                                                                     if($task->getTaskStatus($id,3,'status') == 'Pending') {
                                                                         ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->    
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content">
-                                                                                <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                                <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                            </p>
-                                                                            <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                                <div class="form-group">
-                                                                                    <input type="email" name="email_address" tab class="form-control" placeholder="name@nct.edu.om" required/> 
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <input type="hidden" name="taskId" value="3" />
-                                                                                    <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" name="submitEmail" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                                    <button type="submit" name="declineEmail" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <?php        
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <input type="email" name="email_address" tab class="form-control"
+                                                placeholder="name@nct.edu.om" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="3" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitEmail" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineEmail" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                                     } else {
                                                                         ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->
-                                                                        <!--Email Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Email Assignment History Ends-->
-                                                                        <!--AD Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                            <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <!--AD Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--AD Assignment History Ends-->
-                                                                        <!--System Users Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                            <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--AD Assignment History Ends-->
+                                <!--System Users Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--System Users Assignment History Ends-->
-                                                                        
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <!--System Users Assignment History Ends-->
+
+                                <?php
                                                                     }
                                                                 }    
-                                                            ?>      
-                                                            <!--4. Creating Active Directory Account Portion-->
-                                                            <?php
+                                                            ?>
+                                <!--4. Creating Active Directory Account Portion-->
+                                <?php
                                                                 if($myTaskId == 4) {
                                                                     if($task->getTaskStatus($id,4,'status') == 'Pending') {
                                                                         ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->
-                                                                        <!--Email Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Email Assignment History Ends-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                                <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                                <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                            <p class="ribbon-content">
-                                                                                <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                                <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                            </p>
-                                                                            <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                                <div class="form-group">
-                                                                                    <input type="hidden" name="taskId" value="4" />
-                                                                                    <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" name="submitActiveDirectory" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                                    <button type="submit" name="declineActiveDirectory" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                            <?php        
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="4" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitActiveDirectory" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineActiveDirectory"
+                                                class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline
+                                                Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                                     } else {
                                                                         ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->
-                                                                        <!--Email Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Email Assignment History Ends-->
-                                                                        <!--AD Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                            <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <!--AD Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--AD Assignment History Ends-->
-                                                                        <!--System Users Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                            <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--AD Assignment History Ends-->
+                                <!--System Users Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--System Users Assignment History Ends-->
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <!--System Users Assignment History Ends-->
+                                <?php
                                                                     }
                                                                 }    
                                                             ?>
-                                                            <!--5. Creating System User Account Portion-->
-                                                            <?php
+                                <!--5. Creating System User Account Portion-->
+                                <?php
                                                                 if($myTaskId == 5) {
                                                                     if($task->getTaskStatus($id,5,'status') == 'Pending') {
                                                                         ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->
-                                                                        <!--Email Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Email Assignment History Ends-->
-                                                                        <!--AD Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                            <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <!--AD Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--AD Assignment History Ends-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                            <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                            <p class="ribbon-content">
-                                                                                <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                                <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                            </p>
-                                                                            <form class="form-horizontal m-t-5" action="" method="POST">
-                                                                                <div class="form-group">
-                                                                                    <input type="hidden" name="taskId" value="5" />
-                                                                                    <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" name="submitSystemUser" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                                    <button type="submit" name="declineSystemUser" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                            <?php        
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--AD Assignment History Ends-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST">
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="5" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitSystemUser" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineSystemUser" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                                     } else {
                                                             ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->
-                                                                        <!--Email Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Email Assignment History Ends-->
-                                                                        <!--AD Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                            <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <!--AD Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--AD Assignment History Ends-->
-                                                                        <!--System Users Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                            <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--AD Assignment History Ends-->
+                                <!--System Users Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--System Users Assignment History Ends-->
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <!--System Users Assignment History Ends-->
+                                <?php
                                                                     }
                                                                 }    
                                                             ?>
-                                                            <!--6. Uploading Picture Portion-->
-                                                            <?php
+                                <!--6. Uploading Picture Portion-->
+                                <?php
                                                                 if($myTaskId == 6) {
                                                                     if($task->getTaskStatus($id,6,'status') == 'Pending') {
                                                             ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->
-                                                                        <!--Email Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Email Assignment History Ends-->
-                                                                        <!--AD Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                            <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <!--AD Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--AD Assignment History Ends-->
-                                                                        <!--System Users Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                            <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--AD Assignment History Ends-->
+                                <!--System Users Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--System Users Assignment History Ends-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-custom ribbon-vertical-l"><i class="fas fa-address-card"></i></div>
-                                                                            <h3 class="ribbon-content">Upload Picture</h3>
-                                                                            <p class="ribbon-content">
-                                                                                <span class="text-primary">Status : <span class="label label-warning">On-Process</span> / 
-                                                                                <span class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
-                                                                            </p>
-                                                                            <form class="form-horizontal m-t-5" action="" method="POST" enctype="multipart/form-data">
-                                                                                <div class="form-group">
-                                                                                    <input type="file" name="fileToUpload" accept=".jpg, .jpeg, .png, .pdf, .gif" class="form-control" placeholder="Select image file" required/>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <input type="hidden" name="taskId" value="6" />
-                                                                                    <input type="text" name="comment" class="form-control" placeholder="Type comment here..." required/>
-                                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" name="submitUploadPicture" class="btn btn-info"><i class="fa fa-thumbs-up"></i> Complete Task</button>
-                                                                                    <button type="submit" name="declineUploadPicture" class="btn btn-danger"><i class="fa fa-thumbs-down"></i> Decline Task</button>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                            <?php        
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <!--System Users Assignment History Ends-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-custom ribbon-vertical-l"><i
+                                            class="fas fa-address-card"></i></div>
+                                    <h3 class="ribbon-content">Upload Picture</h3>
+                                    <p class="ribbon-content">
+                                        <span class="text-primary">Status : <span
+                                                class="label label-warning">On-Process</span> /
+                                            <span
+                                                class="text-muted pull-right"><?php echo date('jS F, Y H:i:s',time()); ?></span></span>
+                                    </p>
+                                    <form class="form-horizontal m-t-5" action="" method="POST"
+                                        enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <input type="file" name="fileToUpload"
+                                                accept=".jpg, .jpeg, .png, .pdf, .gif" class="form-control"
+                                                placeholder="Select image file" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="hidden" name="taskId" value="6" />
+                                            <input type="text" name="comment" class="form-control"
+                                                placeholder="Type comment here..." required />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submitUploadPicture" class="btn btn-info"><i
+                                                    class="fa fa-thumbs-up"></i> Complete Task</button>
+                                            <button type="submit" name="declineUploadPicture" class="btn btn-danger"><i
+                                                    class="fa fa-thumbs-down"></i> Decline Task</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <?php        
                                                                     } else {
                                                             ?>
-                                                                        <!--Section Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                                            <?php
+                                <!--Section Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Section Assignment History Ends-->
-                                                                        <!--Email Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--Section Assignment History Ends-->
+                                <!--Email Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Email Assignment History Ends-->
-                                                                        <!--AD Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                                            <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--Email Assignment History Ends-->
+                                <!--AD Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--AD Assignment History Ends-->
-                                                                        <!--System Users Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                                            <h3 class="ribbon-content">Assign System User Type</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--AD Assignment History Ends-->
+                                <!--System Users Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--System Users Assignment History Ends-->
-                                                                        <!--Uploading Photo/Picture Assignment History-->
-                                                                        <div class="ribbon-vwrapper card">
-                                                                            <div class="ribbon ribbon-custom ribbon-vertical-l"><i class="fas fa-address-card"></i></div>
-                                                                            <h3 class="ribbon-content">Upload Picture</h3>
-                                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,6,'status'); ?></span> /
-                                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <!--System Users Assignment History Ends-->
+                                <!--Uploading Photo/Picture Assignment History-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-custom ribbon-vertical-l"><i
+                                            class="fas fa-address-card"></i></div>
+                                    <h3 class="ribbon-content">Upload Picture</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,6,'status'); ?></span>
+                                            /
+                                            <?php
                                                                                 $created_by = $task->getTaskStatus($id,6,'staff_id');
                                                                             ?>
-                                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,6,'transactionDate'))); ?></span></span></p>
-                                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,6,'comments'); ?></i></p>
-                                                                        </div>
-                                                                        <!--Uploading Photo/Picture Assignment History Ends-->
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,6,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,6,'comments'); ?></i></p>
+                                </div>
+                                <!--Uploading Photo/Picture Assignment History Ends-->
+                                <?php
                                                                     }
                                                                 }    
                                                             ?>
-                                                        </div>
-                                                        <!--end card body approval-->
-                                                    </div>
-                                                </div>
-                                <?php            
+                            </div>
+                            <!--end card body approval-->
+                        </div>
+                    </div>
+                    <?php            
                                             } else {
                                                 include_once('not_allowed.php');    
                                             }
                                         } else { //COMPLETED! Read-only, showing only histories...   
-                                ?>        
-                                            <div class="col-lg-7">
-                                                <div class="card">
-                                                    <div class="card-header bg-light-info">
-                                                        <div class="d-flex flex-wrap">
-                                                            <div>
-                                                                <h3 class="card-title">Create Staff's Accounts</h3>
-                                                                <h6 class="card-subtitle font-italic">Approval Details</h6>
-                                                            </div>
-                                                            <div class="ml-auto">
-                                                                <h4> Task ID: <span class="text-primary"><?php echo $requestNo; ?></span> / Status: <span class="text-primary"><?php echo $taskStatus; ?></span></h4>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <!--1. Available for all since this one is finished already upon creation of the user account from staff_add_new.php-->
-                                                        <div class="ribbon-vwrapper card">
-                                                            <div class="ribbon ribbon-info ribbon-vertical-l"><i class="fa fa-user"></i></div>
-                                                            <h3 class="ribbon-content">Create HR Staff Account</h3>
-                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,1,'status'); ?></span> /
-                                                                    <?php
+                                ?>
+                    <div class="col-lg-7">
+                        <div class="card">
+                            <div class="card-header bg-light-info">
+                                <div class="d-flex flex-wrap">
+                                    <div>
+                                        <h3 class="card-title">Create Staff's Accounts</h3>
+                                        <h6 class="card-subtitle font-italic">Approval Details</h6>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <h4> Task ID: <span class="text-primary"><?php echo $requestNo; ?></span> /
+                                            Status: <span class="text-primary"><?php echo $taskStatus; ?></span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!--1. Available for all since this one is finished already upon creation of the user account from staff_add_new.php-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-info ribbon-vertical-l"><i class="fa fa-user"></i></div>
+                                    <h3 class="ribbon-content">Create HR Staff Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,1,'status'); ?></span>
+                                            /
+                                            <?php
                                                                         $created_by = $task->getTaskStatus($id,1,'staff_id');
                                                                     ?>
-                                                                    <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,1,'transactionDate'))); ?></span></span></p>
-                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,1,'comments'); ?></i></p>
-                                                        </div>
-                                                        <!--2. Assigning Section Portion-->
-                                                        <div class="ribbon-vwrapper card">
-                                                            <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i></div>
-                                                            <h3 class="ribbon-content">Assign Section</h3>
-                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span> /
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,1,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,1,'comments'); ?></i></p>
+                                </div>
+                                <!--2. Assigning Section Portion-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-success ribbon-vertical-l"><i class="fa fa-briefcase"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Assign Section</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,2,'status'); ?></span>
+                                            /
+                                            <?php
                                                                 $created_by = $task->getTaskStatus($id,2,'staff_id');
                                                             ?>
-                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span></p>
-                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
-                                                        </div>                                                        
-                                                        <!--3. Creating Email Account Portion-->
-                                                        <div class="ribbon-vwrapper card">
-                                                            <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i></div>
-                                                            <h3 class="ribbon-content">Create Email Account</h3>
-                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span> /
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,2,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,2,'comments'); ?></i></p>
+                                </div>
+                                <!--3. Creating Email Account Portion-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-warning ribbon-vertical-l"><i class="fa fa-envelope"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Email Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,3,'status'); ?></span>
+                                            /
+                                            <?php
                                                                 $created_by = $task->getTaskStatus($id,3,'staff_id');
                                                             ?>
-                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span></p>
-                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
-                                                        </div>
-                                                        <!--4. Creating Active Directory Account Portion-->
-                                                        <div class="ribbon-vwrapper card">
-                                                            <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i></div>
-                                                            <h3 class="ribbon-content">Create Active Directory Account</h3>
-                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span> /
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,3,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,3,'comments'); ?></i></p>
+                                </div>
+                                <!--4. Creating Active Directory Account Portion-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-primary ribbon-vertical-l"> <i class="fa fa-sitemap"></i>
+                                    </div>
+                                    <h3 class="ribbon-content">Create Active Directory Account</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,4,'status'); ?></span>
+                                            /
+                                            <?php
                                                                 $created_by = $task->getTaskStatus($id,4,'staff_id');
                                                             ?>
-                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span></p>
-                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
-                                                        </div>
-                                                        <!--5. Creating System User Account Portion-->
-                                                        <div class="ribbon-vwrapper card">
-                                                            <div class="ribbon ribbon-danger ribbon-vertical-l"> <i class="fa fa-key fa-rotate-270"></i></div>
-                                                            <h3 class="ribbon-content">Assign System User Type</h3>
-                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span> /
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,4,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,4,'comments'); ?></i></p>
+                                </div>
+                                <!--5. Creating System User Account Portion-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-danger ribbon-vertical-l"> <i
+                                            class="fa fa-key fa-rotate-270"></i></div>
+                                    <h3 class="ribbon-content">Assign System User Type</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,5,'status'); ?></span>
+                                            /
+                                            <?php
                                                                 $created_by = $task->getTaskStatus($id,5,'staff_id');
                                                             ?>
-                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span></p>
-                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
-                                                        </div>
-                                                        <!--6. Uploading Picture Portion-->
-                                                        <div class="ribbon-vwrapper card">
-                                                            <div class="ribbon ribbon-custom ribbon-vertical-l"><i class="fas fa-address-card"></i></div>
-                                                            <h3 class="ribbon-content">Upload Picture</h3>
-                                                            <p class="ribbon-content"><span class="text-primary">Status : <span class="label label-info"><?php echo $task->getTaskStatus($id,6,'status'); ?></span> /
-                                                            <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,5,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,5,'comments'); ?></i></p>
+                                </div>
+                                <!--6. Uploading Picture Portion-->
+                                <div class="ribbon-vwrapper card">
+                                    <div class="ribbon ribbon-custom ribbon-vertical-l"><i
+                                            class="fas fa-address-card"></i></div>
+                                    <h3 class="ribbon-content">Upload Picture</h3>
+                                    <p class="ribbon-content"><span class="text-primary">Status : <span
+                                                class="label label-info"><?php echo $task->getTaskStatus($id,6,'status'); ?></span>
+                                            /
+                                            <?php
                                                                 $created_by = $task->getTaskStatus($id,6,'staff_id');
                                                             ?>
-                                                            <span class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,6,'transactionDate'))); ?></span></span></p>
-                                                            <p class="ribbon-content"><i><?php echo $task->getTaskStatus($id,6,'comments'); ?></i></p>
-                                                        </div>
-                                                    </div>
-                                                    <!--end card body approval-->
-                                                </div>
-                                            </div>
-                                <?php
+                                            <span
+                                                class="label label-primary"><?php echo $staff->getStaffName($created_by,'firstName','secondName','thirdName','lastName')." - ".date('jS F, Y H:i:s',strtotime($task->getTaskStatus($id,6,'transactionDate'))); ?></span></span>
+                                    </p>
+                                    <p class="ribbon-content">
+                                        <i><?php echo $task->getTaskStatus($id,6,'comments'); ?></i></p>
+                                </div>
+                            </div>
+                            <!--end card body approval-->
+                        </div>
+                    </div>
+                    <?php
                                         }
                                     }
                                 ?>
-                                
-                            </div>
-                            <!--end row -->
 
-                        </div>
-
-                        <footer class="footer">
-                            <?php include('include_footer.php'); ?>
-                        </footer>
-                    </div>
                 </div>
-                <?php include('include_scripts.php'); ?>
-            </body>
+                <!--end row -->
+
+            </div>
+
+            <footer class="footer">
+                <?php include('include_footer.php'); ?>
+            </footer>
+        </div>
+    </div>
+    <?php include('include_scripts.php'); ?>
+</body>
 
 <?php
         } else {
             include_once('not_allowed.php');
         }
     }
-?>            
+?>
+
 </html>

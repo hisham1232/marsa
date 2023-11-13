@@ -936,7 +936,7 @@ class DbaseManipulation extends Db { //Inheritance, inheriting class Db
 class sendMail {
 	function smtpMailer($to, $from, $from_name, $subject, $body) { 
 		define('GUSER', 'hrms@nct.edu.om'); // GMail username
-		define('GPWD', 'Hr@UTAS_Nizwa^_^RK'); // GMail password
+		define('GPWD', 'mvps icra cbsb wkmv'); // GMail password
 	    global $error;
 	    $mail = new PHPMailer();  // create a new object
 	    $mail->IsSMTP(); // enable SMTP
